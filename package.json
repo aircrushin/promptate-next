@@ -14,6 +14,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
+    "framer-motion": "^11.2.11",
     "i18next": "^23.11.5",
     "lucide-react": "^0.394.0",
     "next": "14.2.4",
@@ -22,6 +23,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-simple-typewriter": "^5.0.1",
+    "react-spinners": "^0.13.8",
     "react-toastify": "^10.0.5",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
