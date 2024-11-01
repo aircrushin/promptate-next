@@ -58,36 +58,44 @@ export default function Hero() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
-      <div className="max-w-3xl px-6 py-12">
-        <div className="text-center space-y-4">
-          <TextAnimate text="Promptate" type="fadeIn" className="text-6xl font-bold text-[#d0ebff] text-center justify-center items-center"></TextAnimate>
-          <p className="text-lg text-[#a5d8ff]">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 dark:from-gray-900 dark:to-gray-800">
+      <div className="max-w-4xl px-6 py-16">
+        <div className="text-center space-y-6">
+          <div className="flex justify-center">
+            <TextAnimate 
+              text="Promptate" 
+              type="fadeIn" 
+              className="text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            />
+          </div>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             <Typewriter
-                  words={["unlock your creativity with the ultimate AI prompt generator. Craft captivating prompts for your writing, art, or any other creativeendeavor."]}
-                  loop={1}
-                  typeSpeed={6}
-                  deleteSpeed={50}
-                  delaySpeed={500}
-                />
+              words={["Unlock your creativity with the ultimate AI prompt generator. Craft captivating prompts for your writing, art, or any creative endeavor."]}
+              loop={1}
+              typeSpeed={6}
+              deleteSpeed={50}
+              delaySpeed={500}
+            />
           </p>
-          <div className="flex flex-col space-y-4 justify-center md:flex-row md:space-x-4 md:space-y-0 md:h-[30vh] min-w-[300px]">
+          <div className="flex flex-col space-y-4 justify-center md:flex-row md:space-x-6 md:space-y-0 md:h-[35vh] w-full max-w-5xl mx-auto">
             <Textarea
-              className="text-gray-200 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"
-              placeholder=""
+              className="w-[400px] resize-none text-gray-700 dark:text-gray-200 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:border-gray-200 dark:hover:border-gray-700 focus:border-gray-200 dark:focus:border-gray-700 focus:ring-0"
+              placeholder="type your prompt here..."
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
-            <button
-              title="Generate prompt"
-              onClick={handleGenerate}
-              className="bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-2 my-auto h-full text-sm text-slate-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 hover:scale-105 transition-transform duration-300"
-            >
-              generate
-            </button>
-            <div className="text-gray-200 text-start flex min-h-[80px] w-full rounded-md border border-input bg-gradient-to-tl from-indigo-500 via-purple-500 to-pink-500 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+            <div className="flex items-center justify-center w-full md:w-[100px]">
+              <button
+                title="Generate prompt"
+                onClick={handleGenerate}
+                className="w-full md:w-auto bg-gradient-to-r from-blue-500 to-purple-500 h-12 px-6 text-white rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium"
+              >
+                Generate
+              </button>
+            </div>
+            <div className="w-[400px] text-gray-700 dark:text-gray-200 flex min-h-[80px] rounded-xl border border-gray-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm px-4 py-3 shadow-lg">
               {loading ? (
-                <ClipLoader color="#ffffff" size={20} className="m-auto"/>
+                <ClipLoader color="#6366f1" size={24} className="m-auto"/>
               ) : prompt ? (
                 <Typewriter
                   words={[prompt]}
@@ -100,13 +108,13 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="mt-8">
-          <h2 className="text-2xl font-bold text-gray-200">
-            Frequently Asked Questions
+        <div className="mt-16">
+          <h2 className="text-3xl text-blue-600 font-bold dark:text-gray-100 mb-8 text-center">
+            FAQ
           </h2>
           <FAQ />
         </div>
-        <footer className="mt-12 text-center text-xs text-gray-200">
+        <footer className="mt-16 text-center text-sm text-gray-500 dark:text-gray-400">
           © 2024 Promptate. All rights reserved.
         </footer>
       </div>
